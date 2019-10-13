@@ -61,10 +61,19 @@ public class AdminController implements Initializable {
 		window.show();
 	}
 	
-
 	public void editUsr(ActionEvent event) throws IOException {
-		System.out.println("Editing the user...");
+		Parent newview = FXMLLoader.load(getClass().getResource("CompanyEditAccount.fxml"));
+		Scene tableViewScene = new Scene(newview);
+
+		Stage window = (Stage) (((Node) event.getSource()).getScene().getWindow());
+
+		window.setScene(tableViewScene);
+		window.setTitle("Edit User");
+		window.show();
 	}
+	
+
+	
 	
 
 	public void editInv(ActionEvent event) throws IOException {
@@ -79,3 +88,4 @@ public class AdminController implements Initializable {
 
 	}
 }
+
